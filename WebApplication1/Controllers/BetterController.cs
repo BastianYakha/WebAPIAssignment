@@ -91,16 +91,30 @@ namespace WebApplication1.Controllers
 
         //setComplaintActive
         [Route("YKA/setComplaintActive")]
-        public async Task<string> setComplaintActive([FromBody] Complaint comp)
+        public async Task<string> setComplaintActive([FromQuery] string id)
         {
-            return dataHandler.ComplaintActive(comp).ToString();
+            return dataHandler.ComplaintActive(id).ToString();
         }
 
         //closeComplaint
         [Route("YKA/closeComplaint")]
-        public async Task<string> closeComplaint([FromBody] Complaint comp)
+        public async Task<string> closeComplaint([FromQuery] string id)
         {
-            return dataHandler.closedComplaint(comp).ToString();
+            return dataHandler.closedComplaint(id).ToString();
+        }
+
+        //selectByDate
+        [Route("YKA/selectByDate")]
+        public async Task<List<Complaint>> selectByDate([FromQuery] DateTime date)
+        {
+            return await dataHandler.selectComplaintByDate(date);
+        }
+
+        //selectByName
+        [Route("YKA/selectByName")]
+        public async Task<List<Complaint>> selectByName([FromQuery] string name)
+        {
+            return await dataHandler.selectComplaintByName(name);
         }
     }
 }

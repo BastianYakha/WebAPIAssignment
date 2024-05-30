@@ -3,9 +3,10 @@
 	@Location uniqueidentifier,
 	@Description varchar(50),
 	@Category int,
-	@status int
+	@status int,
+	@Name varchar(50)
 AS
 INSERT INTO Complaints
-(Id,ComplainerLocation,Location,Description,Category,status,LastUpdated)
+(Id,ComplainerLocation,Location,Description,Category,status,created,Name)
 values
-(NEWID(),@ComplainerLocation,@Location,@Description,@Category,@status,SYSUTCDATETIME())
+(NEWID(),@ComplainerLocation,@Location,@Description,@Category,@status,SYSUTCDATETIME(),@Name)

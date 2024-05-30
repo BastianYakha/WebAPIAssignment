@@ -6,5 +6,6 @@
     [Description] VARCHAR(50) NOT NULL,
 	[Category] INT NOT NULL, 
     [status] INT NOT NULL, 
-    [lastUpdated] DATETIME NOT NULL
+    [created] DATETIME NOT NULL, 
+    [Name] VARCHAR(50) NOT NULL
 )

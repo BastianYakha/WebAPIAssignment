@@ -5,6 +5,6 @@
 AS
 BEGIN
 	UPDATE Complaints
-	SET Description = @Description, status = @status, LastUpdated = SYSUTCDATETIME()
+	SET Description = @Description, status = @status
 	WHERE Id = @Id;
 END
