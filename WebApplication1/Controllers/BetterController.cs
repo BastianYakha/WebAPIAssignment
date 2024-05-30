@@ -88,5 +88,19 @@ namespace WebApplication1.Controllers
         {
             return dataHandler.UpdateComplaint(comp).ToString();
         }
+
+        //setComplaintActive
+        [Route("YKA/setComplaintActive")]
+        public async Task<string> setComplaintActive([FromBody] Complaint comp)
+        {
+            return dataHandler.ComplaintActive(comp).ToString();
+        }
+
+        //closeComplaint
+        [Route("YKA/closeComplaint")]
+        public async Task<string> closeComplaint([FromBody] Complaint comp)
+        {
+            return dataHandler.closedComplaint(comp).ToString();
+        }
     }
 }

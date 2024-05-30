@@ -4,48 +4,6 @@ namespace WebApplication1
 {
     public class InfrastructureHandler
     {
-        /*
-        public Tenant returnTenantOBJ()
-        {
-            Tenant newTenant = new Tenant();
-            newTenant.Name = "Bastian";
-            newTenant.Surname = "Baumann";
-
-            return newTenant;
-        }
-
-        public Apartment returnApartmentOBJ()
-        {
-            Apartment newAP = new Apartment();
-            newAP.Apartmentname = "E2";
-            newAP.tenant = returnTenantOBJ();
-
-            return newAP;
-        }
-
-        public Building returnBuildingOBJ()
-        {
-            Building newBD = new Building();
-            newBD.Street = "new test Street";
-            newBD.StreetNumber = 5;
-            newBD.buildingApartments.Add(returnApartmentOBJ());
-            newBD.buildingApartments.Add(returnApartmentOBJ());
-            newBD.buildingApartments.Add(returnApartmentOBJ());
-            newBD.buildingApartments.Add(returnApartmentOBJ());
-            newBD.buildingApartments.Add(returnApartmentOBJ());
-            newBD.buildingApartments.Add(returnApartmentOBJ());
-
-            return newBD;
-        }
-
-        public Building thorBackBuilding(Building setBuilding)
-        {
-            DatabaseHandler dataHandler = new DatabaseHandler();
-            dataHandler.InsertTenant()
-            return setBuilding;
-        }
-        */
-
         public Complaint test()
         {
             Tenant tenant = new Tenant();
@@ -78,7 +36,7 @@ namespace WebApplication1
             complaint.ComplainerLocation = building;
             complaint.Location = building1;
             complaint.Description = "test desc";
-            complaint.Category = "Test";
+            complaint.Category = 2;
             complaint.status = 1;
 
             return complaint;
