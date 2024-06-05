@@ -1,4 +1,4 @@
 ﻿CREATE PROCEDURE [dbo].[GET_AllBuildings]
 
 AS
-SELECT Id,Street,StreetNumber,buildingApartments FROM Buildings
+SELECT Id,Street,StreetNumber FROM Buildings

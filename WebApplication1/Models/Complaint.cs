@@ -4,8 +4,7 @@
     {
         public string Id { get; set; }
         public string Name { get; set; }
-        public Building ComplainerLocation { get; set; }
-        public Building Location { get; set; }
+        public string Complainer { get; set; }
         public string Description { get; set; }
         public int Category { get; set; }
         public int status { get; set; }

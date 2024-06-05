@@ -4,6 +4,7 @@
     {
         public string Id { get; set; }
         public string Apartmentname {get; set; }
-        public Tenant tenant { get; set; }
+        public string building { get; set; }
+
     }
 }

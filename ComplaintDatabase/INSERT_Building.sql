@@ -1,9 +1,8 @@
 ﻿CREATE PROCEDURE [dbo].[INSERT_Building]
 	@Street varchar(50),
-	@StreetNumber int,
-	@buildingApartments varchar(MAX) = NULL
+	@StreetNumber int
 AS
-INSERT INTO Building
-(Id,Street,StreetNumber,buildingApartments)
+INSERT INTO Buildings
+(Id,Street,StreetNumber)
 values
-(NEWID(),@Street,@StreetNumber,@buildingApartments)
+(NEWID(),@Street,@StreetNumber)

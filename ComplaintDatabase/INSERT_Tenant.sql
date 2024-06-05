@@ -7,6 +7,4 @@ BEGIN
 	(Id,Name,Surname)
 	values
 	(NEWID(),@Name,@Surname)
-
-	SELECT SCOPE_IDENTITY() AS NewUserID;
 END

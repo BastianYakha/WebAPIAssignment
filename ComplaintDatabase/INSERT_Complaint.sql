@@ -1,12 +1,11 @@
 ﻿CREATE PROCEDURE [dbo].[INSERT_Complaint]
-	@ComplainerLocation uniqueidentifier,
-	@Location uniqueidentifier,
+	@Complainer uniqueidentifier,
 	@Description varchar(50),
 	@Category int,
 	@status int,
 	@Name varchar(50)
 AS
 INSERT INTO Complaints
-(Id,ComplainerLocation,Location,Description,Category,status,created,Name)
+(Id,Complainer,Description,Category,status,created,Name)
 values
-(NEWID(),@ComplainerLocation,@Location,@Description,@Category,@status,SYSUTCDATETIME(),@Name)
+(NEWID(),@Complainer,@Description,@Category,@status,SYSUTCDATETIME(),@Name)

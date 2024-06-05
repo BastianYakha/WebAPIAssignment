@@ -74,6 +74,10 @@
     <Build Include="UPDATE_ComplaintStatus.sql" />
     <Build Include="GET_ComplaintByName.sql" />
     <Build Include="GET_ComplaintByDate.sql" />
+    <Build Include="GET_allComplaints.sql" />
+    <Build Include="GET_allTenants.sql" />
+    <Build Include="GET_allApartments.sql" />
+    <Build Include="UPDATE_Tenant.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="ComplaintDatabase.refactorlog" />

@@ -1,10 +1,11 @@
 ﻿using Microsoft.Data.SqlClient;
 using System.Data;
 using WebApplication1.Models;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace WebApplication1
 {
-    public class DatabaseHandler
+    public class ComplaintHandler
     {
         public string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Complaints;Integrated Security=True;";
         public enum stauses
@@ -36,8 +37,7 @@ namespace WebApplication1
 
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("ComplainerLocation", comp.Location.Id);
-                cmd.Parameters.AddWithValue("Location", comp.Location.Id);
+                cmd.Parameters.AddWithValue("Complainer", comp.Complainer);
                 cmd.Parameters.AddWithValue("Description", comp.Description);
                 cmd.Parameters.AddWithValue("Category", comp.Category);
                 cmd.Parameters.AddWithValue("status", 0);
@@ -171,8 +171,7 @@ namespace WebApplication1
 
                     newComp.Id = rd.GetValue(0).ToString();
                     newComp.Name = rd.GetValue(7).ToString();
-                    newComp.ComplainerLocation = newB;
-                    newComp.Location = newB1;
+                    newComp.Complainer = newB.Id;
                     newComp.Description = rd.GetValue(3).ToString();
                     newComp.Category = rd.GetInt32(4);
                     newComp.status = rd.GetInt32(5);
@@ -221,12 +220,51 @@ namespace WebApplication1
 
                     newComp.Id = rd.GetValue(0).ToString();
                     newComp.Name = rd.GetValue(7).ToString();
-                    newComp.ComplainerLocation = newB;
-                    newComp.Location = newB1;
+                    newComp.Complainer= newB.Id;
                     newComp.Description = rd.GetValue(3).ToString();
                     newComp.Category = rd.GetInt32(4);
                     newComp.status = rd.GetInt32(5);
                     newComp.created = rd.GetDateTime(6);
+
+                    compList.Add(newComp);
+                }
+
+                conn.Close();
+
+                return compList;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return compList;
+            }
+        }
+
+        public async Task<List<Complaint>> selectAllComplaints()
+        {
+            List<Complaint> compList = new List<Complaint>();
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            try
+            {
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand("GET_allComplaints", conn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                SqlDataReader rd = cmd.ExecuteReader();
+
+                while (rd.Read())
+                {
+                    Complaint newComp = new Complaint();
+
+                    newComp.Id = rd.GetValue(0).ToString();
+                    newComp.Complainer = rd.GetValue(1).ToString();
+                    newComp.Description = rd.GetValue(2).ToString();
+                    newComp.Category = rd.GetInt32(3);
+                    newComp.status = rd.GetInt32(4);
+                    newComp.created = rd.GetDateTime(5);
+                    newComp.Name = rd.GetValue(6).ToString();
 
                     compList.Add(newComp);
                 }
