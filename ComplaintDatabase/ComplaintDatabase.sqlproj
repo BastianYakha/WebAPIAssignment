@@ -57,29 +57,35 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="GET_Scripts" />
+    <Folder Include="INSERT_Scripts" />
+    <Folder Include="UPDATE_Scripts" />
+    <Folder Include="Tables" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Complaints.sql" />
-    <Build Include="Buildings.sql" />
-    <Build Include="Apartments.sql" />
-    <Build Include="Tenants.sql" />
-    <Build Include="INSERT_Apartment.sql" />
-    <Build Include="INSERT_Building.sql" />
-    <Build Include="INSERT_Tenant.sql" />
-    <Build Include="INSERT_Complaint.sql" />
-    <Build Include="UPDATE_Complaint.sql" />
-    <Build Include="GET_AllBuildings.sql" />
-    <Build Include="GET_BuildingID.sql" />
-    <Build Include="GET_Tenant.sql" />
-    <Build Include="UPDATE_ComplaintStatus.sql" />
-    <Build Include="GET_ComplaintByName.sql" />
-    <Build Include="GET_ComplaintByDate.sql" />
-    <Build Include="GET_allComplaints.sql" />
-    <Build Include="GET_allTenants.sql" />
-    <Build Include="GET_allApartments.sql" />
-    <Build Include="UPDATE_Tenant.sql" />
+    <Build Include="GET_Scripts\GET_Tenant.sql" />
+    <Build Include="GET_Scripts\GET_allApartments.sql" />
+    <Build Include="GET_Scripts\GET_AllBuildings.sql" />
+    <Build Include="GET_Scripts\GET_allComplaints.sql" />
+    <Build Include="GET_Scripts\GET_allTenants.sql" />
+    <Build Include="GET_Scripts\GET_BuildingID.sql" />
+    <Build Include="GET_Scripts\GET_ComplaintByDate.sql" />
+    <Build Include="GET_Scripts\GET_ComplaintByName.sql" />
+    <Build Include="INSERT_Scripts\INSERT_Tenant.sql" />
+    <Build Include="INSERT_Scripts\INSERT_Apartment.sql" />
+    <Build Include="INSERT_Scripts\INSERT_Building.sql" />
+    <Build Include="INSERT_Scripts\INSERT_Complaint.sql" />
+    <Build Include="UPDATE_Scripts\UPDATE_Tenant.sql" />
+    <Build Include="UPDATE_Scripts\UPDATE_Complaint.sql" />
+    <Build Include="UPDATE_Scripts\UPDATE_ComplaintStatus.sql" />
+    <Build Include="Tables\Tenants.sql" />
+    <Build Include="Tables\Complaints.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="ComplaintDatabase.refactorlog" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Tables\Buildings.sql" />
+    <Build Include="Tables\Apartments.sql" />
   </ItemGroup>
 </Project>

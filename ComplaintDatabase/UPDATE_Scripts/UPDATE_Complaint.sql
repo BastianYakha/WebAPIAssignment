@@ -1,6 +1,6 @@
 ﻿CREATE PROCEDURE [dbo].[UPDATE_Complaint]
 	@Id uniqueidentifier,
-	@Description varchar(50),
+	@Description varchar(MAX),
 	@status int
 AS
 BEGIN

@@ -1,6 +1,6 @@
 ﻿CREATE PROCEDURE [dbo].[INSERT_Complaint]
 	@Complainer uniqueidentifier,
-	@Description varchar(50),
+	@Description varchar(MAX),
 	@Category int,
 	@status int,
 	@Name varchar(50)

@@ -56,6 +56,7 @@ namespace WebApplication1
                     newTen.Id = rd.GetValue(0).ToString();
                     newTen.Name = rd.GetValue(1).ToString();
                     newTen.Surname = rd.GetValue(2).ToString();
+                    newTen.Apartment = rd.GetValue(3).ToString();
 
                     tenList.Add(newTen);
                 }

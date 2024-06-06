@@ -54,6 +54,7 @@ namespace WebApplication1
 
                     newAP.Id = rd.GetValue(0).ToString();
                     newAP.Apartmentname = rd.GetValue(1).ToString();
+                    newAP.building = rd.GetValue(2).ToString();
 
                     apList.Add(newAP);
                 }
